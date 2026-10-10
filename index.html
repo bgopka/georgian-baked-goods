@@ -60,7 +60,9 @@ html{scroll-behavior:smooth}img{max-width:100%}
 </div>
 <div style="flex: 1 1 420px; min-width: 0">
 <div style="display: flex; align-items: center; justify-content: center">
-<img src="logo.webp" alt="Georgian Baked Goods logo — a mustached Georgian baker in a chef's hat" style="width: 100%; max-width: 440px; height: auto">
+<div style="width: 100%; max-width: 460px; aspect-ratio: 1 / 1; border-radius: 32px; overflow: hidden; background: #161616; border: 3px solid #D6B25E; box-shadow: 0 18px 40px rgba(17, 17, 17, 0.25)">
+<video src="logo-anim.mp4" poster="logo-anim-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Georgian Baked Goods logo — the mustached baker winks and smiles" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+</div>
 </div>
 </div>
 </section>
@@ -383,5 +385,6 @@ html{scroll-behavior:smooth}img{max-width:100%}
 
 </div>
 <a class="callbar" href="tel:+16474798929"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg><span>Call to order · 647 479 8929</span></a>
+<script>if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video[autoplay]').forEach(function(v){v.removeAttribute('autoplay');v.pause();});}</script>
 </body>
 </html>
