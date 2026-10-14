@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Order online — Georgian Baked Goods · 10 Plastics Avenue</title>
+<meta name="description" content="Order Georgian khachapuri, khinkali, lobiani and sweets online for pickup at Georgian Baked Goods, 10 Plastics Ave. Unit 100, Etobicoke. Pay when you pick up.">
+<link rel="icon" type="image/webp" href="/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFF8D6;color:#1F1B16;font-family:'Work Sans','Helvetica Neue',sans-serif;font-size:17px;line-height:1.5}
+a{color:#111111}a:hover{color:#5a4a00}
+img{max-width:100%}
+button{font:inherit}
+.disp{font-family:'Montserrat','Helvetica Neue',sans-serif}
+[hidden]{display:none !important}
+:focus-visible{outline:3px solid #2B6CB0;outline-offset:2px}
+
+.head{background:#111111;color:#FFF8D6}
+.head-row{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#FFF8D6}
+.brand img{width:60px;height:58px;object-fit:contain}
+.brand span{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase;color:#D6B25E;line-height:1.15}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav-link{color:#FFF8D6;text-decoration:none;padding:12px 16px;font-weight:500}
+.nav-link:hover{color:#D6B25E}
+.call-btn{color:#111111;background:#D6B25E;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:700;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.call-btn:hover{color:#111111;background:#E3C478}
+
+.order-main{max-width:1200px;margin:0 auto;padding:48px 32px 96px;display:flex;flex-direction:column;gap:32px}
+.eyebrow{margin:0;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
+h1{margin:0;font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.03em}
+.intro{margin:0;font-size:18px;max-width:40rem}
+.hours-line{margin:0;font-size:16px;font-weight:600}
+.notice{background:#2B2620;color:#FFF8E6;border-radius:20px;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.notice p{margin:0;max-width:44rem;font-size:17px}
+.notice a{color:#111111;background:#D6B25E;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:700;white-space:nowrap}
+
+.layout{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.rail{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:0 -4px;padding:0 4px 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;background:#FFFFFF;border:1.5px solid #D9CCA6;color:#111111;text-decoration:none;border-radius:999px;padding:10px 16px;font-weight:600;font-size:15px;white-space:nowrap}
+.cat{display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}
+.cat h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{background:#FFFFFF;border:1.5px solid #ECE3CB;border-radius:18px;padding:10px 12px 10px 10px;display:flex;align-items:center;gap:14px}
+.row.on{background:#FFFDF2;border-color:#D6B25E}
+.row img{width:68px;height:68px;object-fit:cover;border-radius:14px;flex:none}
+.row-info{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px}
+.row-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#6B5A1E;background:#F6EDD3;border-radius:8px;padding:2px 8px}
+.row-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;line-height:1.25}
+.row-price{font-weight:600;color:#B3261E;font-size:16px}
+.row-total{font-weight:600;font-size:15px;white-space:nowrap;color:#5C5242}
+.stepper{display:flex;align-items:center;gap:4px;flex:none;background:#FBF4DF;border-radius:999px;padding:3px}
+.stepper button{width:44px;height:44px;border-radius:999px;border:none;font-size:22px;font-weight:700;cursor:pointer;line-height:1}
+.stepper .dec{background:#FFFFFF;color:#111111}
+.stepper .inc{background:#111111;color:#FFF8D6}
+.stepper button:disabled{opacity:.35;cursor:default}
+.qty{min-width:32px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px}
+
+.aside{flex:1 1 360px;min-width:0;background:#FFFFFF;border:1px solid #ECE3CB;border-radius:24px;box-shadow:0 10px 28px rgba(60,45,10,.10);padding:28px;display:flex;flex-direction:column;gap:20px;scroll-margin-top:16px}
+.aside-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.aside-head h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;display:flex;align-items:center;gap:10px}
+.muted{color:#5C5242}
+.icon-btn{width:44px;height:44px;border-radius:999px;border:1.5px solid #ECE3CB;background:#FFFFFF;color:#111111;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.empty{margin:0;padding:20px;border-radius:16px;background:#FBF4DF;font-size:16px;color:#5C5242;text-align:center}
+.lines{display:flex;flex-direction:column;gap:8px}
+.line{display:grid;grid-template-columns:auto 10px minmax(0,1fr) auto;gap:6px;align-items:baseline;font-size:16px}
+.line .sep{color:#9A8E70}
+.line .amt{white-space:nowrap;font-weight:600}
+.totals{border-top:1px dashed #D9CCA6;padding-top:16px;display:flex;flex-direction:column;gap:6px;font-size:16px}
+.totals div{display:flex;justify-content:space-between}
+.grand{align-items:baseline;margin-top:6px}
+.grand span:first-child{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px}
+.grand span:last-child{font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px}
+.fields{display:flex;flex-direction:column;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-weight:600;font-size:15px}
+.field input{height:50px;border-radius:14px;border:1.5px solid #D9CCA6;padding:0 16px;font:inherit;font-size:18px;background:#FFFDF6;color:#1F1B16;width:100%}
+.field input.bad{border-color:#B3261E}
+.err{font-size:14px;color:#B3261E}
+.hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.big{margin:0;padding:12px 14px;border-radius:14px;background:#FBF4DF;font-size:15px}
+.msg{margin:0;padding:14px 16px;border-radius:14px;background:#FDF0EE;border:1px solid #F0C9C4;font-size:15px;color:#7A1A14}
+.msg a{color:#7A1A14;font-weight:700}
+.place{height:60px;border-radius:999px;border:none;background:#111111;color:#FFF8D6;font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;cursor:pointer;width:100%;padding:0 16px}
+.place.off{background:#E8DFC4;color:#6B6252;cursor:not-allowed}
+.closed-box{background:#FBF4DF;border:1px solid #ECE3CB;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.closed-box p{margin:0;font-size:16px}
+.gold-btn{background:#D6B25E;color:#111111;text-decoration:none;padding:14px 22px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:8px;min-height:48px}
+.gold-btn:hover{color:#111111;background:#E3C478}
+.hint{margin:0;font-size:14px;color:#5C5242;text-align:center}
+.link-red{align-self:center;min-height:44px;padding:0 16px;border:none;background:transparent;color:#B3261E;font-size:15px;font-weight:600;text-decoration:underline;cursor:pointer}
+.confirm{background:#FDF0EE;border:1px solid #F0C9C4;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;text-align:center}
+.confirm-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn-red{min-height:44px;padding:0 18px;border-radius:999px;border:none;background:#B3261E;color:#FFFFFF;font-weight:700;cursor:pointer}
+.btn-plain{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #D9CCA6;background:#FFFFFF;color:#111111;font-weight:600;cursor:pointer}
+.badge{position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:#B3261E;color:#FFFFFF;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.float-cart{position:fixed;right:28px;bottom:28px;z-index:20;display:flex;align-items:center;gap:12px;padding:10px 22px 10px 12px;min-height:60px;border-radius:999px;border:none;background:#111111;color:#FFF8D6;box-shadow:0 12px 30px rgba(0,0,0,.25);cursor:pointer}
+.cart-dot{position:relative;width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;flex:none}
+.mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;background:#111111;color:#FFF8D6;border-radius:22px 22px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,.18);padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));align-items:center;justify-content:space-between;gap:12px}
+.mobile-bar a{background:#D6B25E;color:#111111;text-decoration:none;padding:14px 22px;min-height:48px;display:flex;align-items:center;border-radius:999px;font-weight:800;font-family:'Montserrat',sans-serif;white-space:nowrap}
+
+.done{max-width:720px;margin:0 auto;padding:64px 32px 96px;display:flex;flex-direction:column;gap:28px}
+.done-card{background:#2B2620;color:#FFF8E6;border-radius:28px;padding:40px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 12px 32px rgba(43,38,32,.18)}
+.done-num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:72px;line-height:1;letter-spacing:.02em;color:#FFF8D6}
+.done-card .gold{color:#D6B25E}
+.done-sum{background:#FFFFFF;border:1px solid #ECE3CB;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.done-sum h2{margin:0 0 6px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px}
+.done-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cancel-zone{background:#FFFFFF;border:1px solid #ECE3CB;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.cancel-zone p{margin:0}
+
+.foot{background:#F6EDD3;color:#1F1B16;border-top:1px solid #ECE3CB}
+.foot-row{max-width:1200px;margin:0 auto;padding:40px 32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:15px}
+.foot-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:#9A7628}
+
+@media (min-width:901px){
+ .aside{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto}
+}
+@media (max-width:900px){
+ .mobile-bar.show{display:flex}
+ .min-btn,.float-cart{display:none !important}
+ .order-main{padding:28px 16px 140px;gap:20px}
+ .aside{padding:20px;border-radius:20px}
+}
+@media (max-width:720px){
+ .nav-link{display:none}
+ .head-row{padding:10px 16px}
+ .brand{gap:10px}
+ .brand img{width:40px;height:38px}
+ .brand span{font-size:14px}
+ .call-btn{padding:10px 16px}
+ .call-label{display:none}
+}
+@media (max-width:560px){
+ .row-total,.num{display:none}
+ .row img{width:56px;height:56px;border-radius:12px}
+ .row{gap:10px;padding:8px}
+ .row-name{font-size:15px}
+ .intro{font-size:16px}
+ .done{padding:28px 16px 64px}
+ .done-num{font-size:56px}
+ .done-sum{padding:20px}
+ .line{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="head">
+<div class="head-row">
+<a class="brand" href="/"><img src="/logo.webp" alt=""><span>Georgian Baked Goods</span></a>
+<nav class="nav" aria-label="Main">
+<a class="nav-link" href="/#about">About</a>
+<a class="nav-link" href="/#menu">Menu</a>
+<a class="nav-link" href="/#visit">Visit</a>
+<a class="call-btn" href="tel:+16474798929" aria-label="Call to order, 647 479 8929"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg><span><span class="call-label">Call · </span>647 479 8929</span></a>
+</nav>
+</div>
+</header>
+
+<main id="order" class="order-main">
+<div style="display:flex;flex-direction:column;gap:10px">
+<p class="eyebrow">Order ahead · pay at pickup</p>
+<h1>Order online</h1>
+<p class="intro">Pick what you'd like, leave your phone number, and we'll have it ready. You'll get an order number to show at the counter.</p>
+<p class="hours-line" id="hoursLine" hidden></p>
+</div>
+
+<div class="notice" id="closedNotice" hidden>
+<p id="closedNoticeText"></p>
+<a href="tel:+16474798929">Call 647 479 8929</a>
+</div>
+
+<div class="layout">
+<div class="rail">
+<nav class="chips" aria-label="Menu sections" id="chips"></nav>
+<div id="cats" style="display:flex;flex-direction:column;gap:28px"></div>
+</div>
+
+<aside class="aside" id="your-order" aria-label="Your order">
+<div class="aside-head">
+<h2><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path></svg><span>Your order</span></h2>
+<div style="display:flex;align-items:center;gap:6px">
+<span class="muted" id="countLabel" style="font-size:15px">0 items</span>
+<button type="button" class="icon-btn min-btn" id="minBtn" aria-label="Minimize order to cart" title="Minimize to cart"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+</div>
+</div>
+<p class="empty" id="emptyNote">Tap <strong style="color:#111">+</strong> next to anything on the menu to add it.</p>
+<div class="lines" id="lines" aria-live="polite"></div>
+<div class="totals">
+<div><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+<div><span>HST (13%)</span><span id="hst">$0.00</span></div>
+<div class="grand"><span>Total</span><span id="total">$0.00</span></div>
+</div>
+
+<form class="fields" id="orderForm" novalidate>
+<div class="field">
+<label for="phone">Phone number <span style="color:#B3261E">*</span></label>
+<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="416 555 0142">
+<span class="err" id="phoneErr" hidden>Please enter a 10-digit phone number so we can reach you.</span>
+</div>
+<div class="field">
+<label for="name">Name <span class="muted" style="font-weight:400">(optional)</span></label>
+<input id="name" name="name" type="text" autocomplete="name" maxlength="60" placeholder="So we know who's picking up">
+</div>
+<div class="field">
+<label for="email">Email <span class="muted" style="font-weight:400">(optional)</span></label>
+<input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" placeholder="For your order confirmation">
+<span class="err" id="emailErr" hidden>That email doesn't look right. Check it, or leave it blank.</span>
+</div>
+<div class="hp" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+</form>
+
+<p class="big" id="bigNote" hidden>Big order? Please also call <a href="tel:+16474798929" style="font-weight:700">647 479 8929</a> so we can confirm we'll have it ready in time.</p>
+<div id="turnstile" hidden></div>
+<p class="msg" id="formMsg" role="alert" hidden></p>
+
+<button type="button" class="place off" id="placeBtn">Place order</button>
+<div class="closed-box" id="closedBox" hidden>
+<p id="closedBoxText"></p>
+<a class="gold-btn" href="tel:+16474798929"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg><span>Call 647 479 8929</span></a>
+</div>
+<p class="hint" id="hint">Add at least one item to continue.</p>
+<button type="button" class="link-red" id="clearLink" hidden>Cancel order</button>
+<div class="confirm" id="clearConfirm" role="alert" hidden>
+<span style="font-weight:600" id="clearText">Remove everything and start over?</span>
+<div class="confirm-btns">
+<button type="button" class="btn-red" id="clearYes">Yes, cancel order</button>
+<button type="button" class="btn-plain" id="clearNo">Keep my order</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+
+<button type="button" class="float-cart" id="floatCart" hidden>
+<span class="cart-dot" style="background:#D6B25E;color:#111"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path></svg><span class="badge" id="floatCount">0</span></span>
+<span class="disp" style="font-weight:800;font-size:20px" id="floatTotal">$0.00</span>
+</button>
+
+<div class="mobile-bar" id="mobileBar">
+<span style="display:flex;align-items:center;gap:12px">
+<span class="cart-dot" style="background:#2B2620;color:#D6B25E"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path></svg><span class="badge" id="barCount" style="top:-4px;right:-4px;min-width:20px;height:20px;font-size:12px">0</span></span>
+<span style="display:flex;flex-direction:column;line-height:1.2"><span style="font-size:14px;color:#E8DFC4"><span id="barItems">0 items</span> · incl. HST</span><span class="disp" style="font-weight:800;font-size:24px" id="barTotal">$0.00</span></span>
+</span>
+<a href="#your-order">Review &amp; place</a>
+</div>
+
+<main class="done" id="done" hidden tabindex="-1">
+<div class="done-card">
+<svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D6B25E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m8 12 3 3 5-6"></path></svg>
+<span class="gold" style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px">Order received</span>
+<span>Your order number</span>
+<span class="done-num" id="doneNum">#</span>
+<span style="font-size:16px;max-width:28rem" id="doneText"></span>
+<span class="gold" style="font-size:15px" id="doneEmail" hidden></span>
+<span style="font-size:15px;color:#FFE7A8" id="doneCheck" hidden>We'll call you to confirm before we start on this order.</span>
+</div>
+<div class="done-sum">
+<h2>Order summary</h2>
+<div class="lines" id="doneLines"></div>
+<div class="totals">
+<div><span>Subtotal</span><span id="doneSub"></span></div>
+<div><span>HST (13%)</span><span id="doneHst"></span></div>
+<div class="grand"><span>Total</span><span id="doneTotal"></span></div>
+</div>
+<p class="muted" style="margin:6px 0 0;font-size:14px">No payment online. Pay when you pick up.</p>
+</div>
+<div class="cancel-zone" id="cancelZone">
+<p id="cancelInfo"></p>
+<button type="button" class="link-red" id="cancelBtn">Cancel this order</button>
+<div class="confirm" id="cancelConfirm" hidden>
+<span style="font-weight:600" id="cancelQ"></span>
+<div class="confirm-btns">
+<button type="button" class="btn-red" id="cancelYes">Yes, cancel it</button>
+<button type="button" class="btn-plain" id="cancelNo">Keep my order</button>
+</div>
+</div>
+<p class="msg" id="cancelMsg" role="alert" hidden></p>
+</div>
+<div class="done-actions">
+<a class="gold-btn" href="tel:+16474798929">Questions? Call 647 479 8929</a>
+<button type="button" class="btn-plain" id="newOrder" style="min-height:48px">Start a new order</button>
+</div>
+</main>
+
+<footer class="foot">
+<div class="foot-row">
+<span class="foot-name">Georgian Baked Goods</span>
+<span>10 Plastics Avenue · <a href="tel:+16474798929" style="color:#1F1B16;font-weight:700">647 479 8929</a></span>
+<a href="mailto:sales@georgianbakedgoods.com" style="color:#1F1B16">sales@georgianbakedgoods.com</a>
+</div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var API = 'https://automation.tenerapro.com/webhook/gbg';
+  var TURNSTILE_SITE_KEY = ''; // Set the Cloudflare Turnstile site key here to turn the check on.
+  var MENU = [{"title": "Khachapuri", "items": [{"id": 11, "name": "Imeruli Khachapuri — Large", "price": 19.0, "img": "menu/03.jpg"}, {"id": 12, "name": "Imeruli Khachapuri — Medium", "price": 10.0, "img": "menu/03.jpg"}, {"id": 13, "name": "Megruli Khachapuri — Large", "price": 22.0, "img": "menu/01.jpg"}, {"id": 14, "name": "Megruli Khachapuri — Medium", "price": 11.0, "img": "menu/01.jpg"}, {"id": 15, "name": "Adjaruli Khachapuri", "price": 12.0, "img": "menu/04.jpg"}, {"id": 16, "name": "Penovani Khachapuri", "price": 7.0, "img": "menu/08.jpg"}, {"id": 17, "name": "Gurulo", "price": 8.0, "img": "menu/11.jpg"}, {"id": 18, "name": "Mtiuluri Khachapuri", "price": 10.0, "img": "menu/12.jpg"}]}, {"title": "Breads & filled pies", "items": [{"id": 21, "name": "Penovani Lobiani", "price": 6.0, "img": "menu/02.jpg"}, {"id": 22, "name": "Lobiani — Large", "price": 16.0, "img": "menu/07.jpg"}, {"id": 23, "name": "Lobiani — Medium", "price": 10.0, "img": "menu/07.jpg"}, {"id": 24, "name": "Kubdari", "price": 12.0, "img": "menu/10.jpg"}, {"id": 25, "name": "Lily", "price": 3.5, "img": "menu/15.jpg"}]}, {"title": "Khinkali & savoury", "items": [{"id": 31, "name": "Khinkali", "price": 1.7, "img": "menu/06.jpg"}, {"id": 32, "name": "Chebureki", "price": 5.0, "img": "menu/05.jpg"}]}, {"title": "Sweets", "items": [{"id": 41, "name": "Qada", "price": 2.0, "img": "menu/09.jpg"}, {"id": 42, "name": "Cake Spartak", "price": 5.5, "img": "menu/13.jpg"}, {"id": 43, "name": "Cake Medovik", "price": 5.5, "img": "menu/14.jpg"}]}];
+  var MAX_QTY = 50;
+  var CANCEL_MINUTES = 15;
+  var PHONE = '647 479 8929';
+  var startedAt = Date.now();
+
+  var qty = {};
+  var tried = false, submitting = false, minimized = false;
+  var shop = { open: null, next: null, hours: '', message: '' };
+  var turnstileToken = '';
+  var last = null, cancelTimer = null;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var money = function (n) { return '$' + (Math.round(n * 100) / 100).toFixed(2); };
+  var byId = {};
+  MENU.forEach(function (c) { c.items.forEach(function (i) { byId[i.id] = i; }); });
+
+  function el(tag, attrs, kids) {
+    var e = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === 'text') e.textContent = attrs[k];
+      else if (k === 'class') e.className = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    });
+    (kids || []).forEach(function (k) { if (k) e.appendChild(k); });
+    return e;
+  }
+
+  // ---------- menu list ----------
+  var rowRefs = {};
+  MENU.forEach(function (cat, ci) {
+    var anchor = 'sec-' + ci;
+    $('chips').appendChild(el('a', { class: 'chip', href: '#' + anchor, text: cat.title }));
+    var rows = el('div', { class: 'rows' });
+    cat.items.forEach(function (it) {
+      var dec = el('button', { type: 'button', class: 'dec', 'aria-label': 'Remove one ' + it.name, text: '−' });
+      var inc = el('button', { type: 'button', class: 'inc', 'aria-label': 'Add one ' + it.name, text: '+' });
+      var q = el('span', { class: 'qty', text: '0', 'aria-live': 'polite' });
+      var tot = el('span', { class: 'row-total' });
+      var row = el('div', { class: 'row' }, [
+        el('img', { src: '/' + it.img, alt: '', loading: 'lazy', width: '68', height: '68' }),
+        el('div', { class: 'row-info' }, [
+          el('div', { class: 'row-top' }, [el('span', { class: 'num', text: '#' + it.id }), el('span', { class: 'row-name', text: it.name })]),
+          el('span', { class: 'row-price', text: money(it.price).replace('.00', '') })
+        ]),
+        tot,
+        el('div', { class: 'stepper' }, [dec, q, inc])
+      ]);
+      dec.addEventListener('click', function () { bump(it.id, -1); });
+      inc.addEventListener('click', function () { bump(it.id, 1); });
+      rowRefs[it.id] = { row: row, q: q, dec: dec, inc: inc, tot: tot };
+      rows.appendChild(row);
+    });
+    $('cats').appendChild(el('section', { class: 'cat', id: anchor }, [el('h2', { text: cat.title }), rows]));
+  });
+
+  function bump(id, d) {
+    qty[id] = Math.min(MAX_QTY, Math.max(0, (qty[id] || 0) + d));
+    if (!qty[id]) delete qty[id];
+    $('clearConfirm').hidden = true;
+    hideMsg();
+    update();
+  }
+
+  function cartLines() {
+    var lines = [];
+    MENU.forEach(function (c) { c.items.forEach(function (it) {
+      var n = qty[it.id] || 0;
+      if (n) lines.push({ id: it.id, name: it.name, qty: n, price: it.price, amount: n * it.price });
+    }); });
+    return lines;
+  }
+  function calc(lines) {
+    var count = 0, sub = 0;
+    lines.forEach(function (l) { count += l.qty; sub += l.amount; });
+    sub = Math.round(sub * 100) / 100;
+    var hst = Math.round(sub * 13) / 100;
+    return { count: count, sub: sub, hst: hst, total: Math.round((sub + hst) * 100) / 100 };
+  }
+  function lineEl(l) {
+    return el('div', { class: 'line' }, [
+      el('span', { style: 'white-space:nowrap' }, [el('strong', { text: String(l.qty) }), document.createTextNode(' × ' + money(l.price))]),
+      el('span', { class: 'sep', text: '|' }),
+      el('span', null, [el('strong', { text: '#' + l.id }), document.createTextNode(' ' + l.name)]),
+      el('span', { class: 'amt', text: money(l.amount) })
+    ]);
+  }
+
+  // ---------- validation ----------
+  function phoneDigits() {
+    var d = $('phone').value.replace(/\D/g, '');
+    if (d.length === 11 && d[0] === '1') d = d.slice(1);
+    return d;
+  }
+  function phoneOk() { var d = phoneDigits(); return d.length === 10 && /^[2-9]\d{2}[2-9]/.test(d); }
+  function emailVal() { return $('email').value.trim(); }
+  function emailOk() { var v = emailVal(); return v === '' || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  function closedText() {
+    if (shop.message) return shop.message;
+    return 'Sorry we missed you! Online ordering is open ' + (shop.hours || 'during our business hours') + '. You can also call ' + PHONE + '.';
+  }
+
+  // ---------- render ----------
+  function update() {
+    var lines = cartLines(), t = calc(lines);
+    Object.keys(rowRefs).forEach(function (id) {
+      var r = rowRefs[id], n = qty[id] || 0;
+      r.q.textContent = String(n);
+      r.dec.disabled = n === 0;
+      r.inc.disabled = n >= MAX_QTY;
+      r.row.classList.toggle('on', n > 0);
+      r.tot.textContent = n ? money(n * byId[id].price) : '';
+    });
+    var label = t.count === 1 ? '1 item' : t.count + ' items';
+    $('countLabel').textContent = label;
+    $('emptyNote').hidden = t.count > 0;
+    var box = $('lines'); box.innerHTML = '';
+    lines.forEach(function (l) { box.appendChild(lineEl(l)); });
+    $('subtotal').textContent = money(t.sub);
+    $('hst').textContent = money(t.hst);
+    $('total').textContent = money(t.total);
+    $('bigNote').hidden = !(t.total > 400 || t.count > 60);
+
+    var pOk = phoneOk(), eOk = emailOk();
+    $('phoneErr').hidden = !(tried && !pOk);
+    $('phone').classList.toggle('bad', tried && !pOk);
+    $('emailErr').hidden = !(tried && !eOk);
+    $('email').classList.toggle('bad', tried && !eOk);
+
+    var closed = shop.open === false;
+    $('placeBtn').hidden = closed;
+    $('closedBox').hidden = !closed;
+    $('closedNotice').hidden = !closed;
+    if (closed) { $('closedBoxText').textContent = closedText(); $('closedNoticeText').textContent = closedText(); }
+    $('hoursLine').hidden = !shop.hours;
+    $('hoursLine').textContent = shop.hours ? 'Online ordering: ' + shop.hours : '';
+
+    var no = shop.next ? ' #' + shop.next : '';
+    var btn = $('placeBtn');
+    if (submitting) btn.textContent = 'Sending your order…';
+    else btn.textContent = t.count ? 'Place order' + no + ' · ' + money(t.total) : 'Place order' + no;
+    btn.classList.toggle('off', !(t.count && pOk && eOk) || submitting);
+    btn.setAttribute('aria-disabled', String(!t.count || submitting));
+
+    $('hint').textContent = closed ? '' : (t.count === 0 ? 'Add at least one item to continue.' :
+      (!pOk ? 'Your phone number is required to place the order.' :
+      (!eOk ? 'Fix your email, or leave it blank.' : 'No payment online. Pay when you pick up.')));
+    $('hint').hidden = closed;
+    $('clearLink').hidden = !(t.count > 0) || !$('clearConfirm').hidden;
+    $('clearText').textContent = 'Remove all ' + label + ' and start over?';
+
+    $('your-order').hidden = minimized;
+    $('floatCart').hidden = !minimized;
+    $('floatCount').textContent = String(t.count);
+    $('floatTotal').textContent = money(t.total);
+    $('floatCart').setAttribute('aria-label', 'Open your order, ' + label + ', ' + money(t.total));
+    $('mobileBar').classList.toggle('show', t.count > 0 && $('done').hidden);
+    $('barCount').textContent = String(t.count);
+    $('barItems').textContent = label;
+    $('barTotal').textContent = money(t.total);
+  }
+
+  function showMsg(text, withCall) {
+    var m = $('formMsg'); m.innerHTML = '';
+    m.appendChild(document.createTextNode(text + (withCall ? ' ' : '')));
+    if (withCall && text.indexOf(PHONE) === -1) m.appendChild(el('a', { href: 'tel:+16474798929', text: 'Call ' + PHONE }));
+    m.hidden = false;
+  }
+  function hideMsg() { $('formMsg').hidden = true; }
+
+  // ---------- shop status ----------
+  function loadStatus() {
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 10000);
+    fetch(API + '/next', { method: 'GET', cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        shop.open = d.open === false ? false : (d.open === true ? true : null);
+        shop.next = d.next || null;
+        shop.hours = d.hours || '';
+        shop.message = d.message || '';
+        update();
+      })
+      .catch(function () { /* unknown status: allow ordering, the server decides */ })
+      .then(function () { clearTimeout(timer); });
+  }
+
+  // ---------- place order ----------
+  function place() {
+    if (submitting || shop.open === false) return;
+    var lines = cartLines();
+    tried = true;
+    if (!lines.length) { update(); return; }
+    if (!phoneOk()) { update(); $('phone').focus(); return; }
+    if (!emailOk()) { update(); $('email').focus(); return; }
+    if (TURNSTILE_SITE_KEY && !turnstileToken) { showMsg('Please wait a moment while we check you are not a robot, then try again.'); return; }
+    hideMsg();
+    submitting = true; update();
+
+    var phone = $('phone').value.trim(), email = emailVal(), name = $('name').value.trim();
+    var payload = {
+      items: lines.map(function (l) { return { id: String(l.id), qty: l.qty }; }),
+      name: name, phone: phone, email: email, notes: '',
+      website: $('website').value, startedAt: startedAt, turnstileToken: turnstileToken
+    };
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+    var network = 'Couldn\'t send your order. Please call ' + PHONE + '.';
+
+    fetch(API + '/order', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload), signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function (r) { return r.json().catch(function () { return null; }); })
+      .then(function (d) {
+        if (d && d.ok) { showDone(d, lines, phone, email); return; }
+        if (d && d.closed) {
+          shop.open = false;
+          if (d.message) shop.message = d.message;
+          showMsg(d.message || closedText(), true);
+          return;
+        }
+        if (d && d.message) { showMsg(d.message, true); return; }
+        showMsg(network, true);
+      })
+      .catch(function () { showMsg(network, true); })
+      .then(function () {
+        clearTimeout(timer);
+        submitting = false;
+        if (window.turnstile && TURNSTILE_SITE_KEY) { try { window.turnstile.reset(); } catch (e) {} turnstileToken = ''; }
+        update();
+      });
+  }
+
+  // ---------- confirmation ----------
+  function showDone(d, lines, phone, email) {
+    var t = calc(lines);
+    var total = typeof d.total === 'number' ? d.total : parseFloat(String(d.total || '').replace(/[^0-9.]/g, ''));
+    last = { orderNumber: d.orderNumber, phone: phone, at: Date.now(), cancelled: false };
+    $('doneNum').textContent = '#' + d.orderNumber;
+    $('doneText').textContent = 'Show this number at the counter and pay when you pick up. We\'ll call ' + phone + ' if anything changes.';
+    $('doneEmail').hidden = !email;
+    $('doneEmail').textContent = email ? 'A confirmation is on its way to ' + email + '.' : '';
+    $('doneCheck').hidden = !(d.status && /check/i.test(String(d.status)));
+    var box = $('doneLines'); box.innerHTML = '';
+    lines.forEach(function (l) { box.appendChild(lineEl(l)); });
+    $('doneSub').textContent = money(t.sub);
+    $('doneHst').textContent = money(t.hst);
+    $('doneTotal').textContent = money(isNaN(total) ? t.total : total);
+    $('cancelBtn').hidden = false; $('cancelConfirm').hidden = true; $('cancelMsg').hidden = true;
+    $('cancelZone').hidden = false;
+    tickCancel();
+    clearInterval(cancelTimer); cancelTimer = setInterval(tickCancel, 20000);
+    qty = {}; tried = false; minimized = false;
+    $('order').hidden = true; $('floatCart').hidden = true;
+    $('done').hidden = false;
+    update();
+    window.scrollTo(0, 0);
+    $('done').focus({ preventScroll: true });
+  }
+
+  function minutesLeft() { return last ? CANCEL_MINUTES - (Date.now() - last.at) / 60000 : 0; }
+  function tickCancel() {
+    if (!last || last.cancelled) return;
+    var left = Math.ceil(minutesLeft());
+    if (left <= 0) {
+      clearInterval(cancelTimer);
+      $('cancelBtn').hidden = true; $('cancelConfirm').hidden = true;
+      $('cancelInfo').innerHTML = '';
+      $('cancelInfo').appendChild(document.createTextNode('Need to change or cancel? Call '));
+      $('cancelInfo').appendChild(el('a', { href: 'tel:+16474798929', text: PHONE, style: 'font-weight:700' }));
+      $('cancelInfo').appendChild(document.createTextNode('.'));
+      return;
+    }
+    $('cancelInfo').textContent = 'Changed your mind? You can cancel online for the next ' + left + (left === 1 ? ' minute.' : ' minutes.');
+    $('cancelQ').textContent = 'Cancel order #' + last.orderNumber + '?';
+  }
+  function doCancel() {
+    if (!last) return;
+    $('cancelYes').disabled = true;
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+    fetch(API + '/cancel', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderNumber: last.orderNumber, phone: last.phone }), signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function (r) { return r.json().catch(function () { return null; }); })
+      .then(function (d) {
+        $('cancelConfirm').hidden = true;
+        if (d && d.ok) {
+          last.cancelled = true; clearInterval(cancelTimer);
+          $('cancelBtn').hidden = true;
+          $('cancelInfo').textContent = 'Order #' + last.orderNumber + ' is cancelled. Nothing more to do.';
+          $('doneNum').style.textDecoration = 'line-through';
+        } else {
+          var m = $('cancelMsg'); m.textContent = (d && d.message) || ('Couldn\'t cancel online. Please call ' + PHONE + '.'); m.hidden = false;
+        }
+      })
+      .catch(function () { var m = $('cancelMsg'); m.textContent = 'Couldn\'t cancel online. Please call ' + PHONE + '.'; m.hidden = false; })
+      .then(function () { clearTimeout(timer); $('cancelYes').disabled = false; });
+  }
+
+  // ---------- events ----------
+  $('placeBtn').addEventListener('click', place);
+  $('orderForm').addEventListener('submit', function (e) { e.preventDefault(); place(); });
+  ['phone', 'email', 'name'].forEach(function (id) { $(id).addEventListener('input', function () { hideMsg(); update(); }); });
+  $('minBtn').addEventListener('click', function () { minimized = true; $('clearConfirm').hidden = true; update(); $('floatCart').focus(); });
+  $('floatCart').addEventListener('click', function () { minimized = false; update(); $('your-order').scrollIntoView({ block: 'start' }); });
+  $('clearLink').addEventListener('click', function () { $('clearConfirm').hidden = false; update(); $('clearNo').focus(); });
+  $('clearNo').addEventListener('click', function () { $('clearConfirm').hidden = true; update(); });
+  $('clearYes').addEventListener('click', function () { qty = {}; tried = false; $('clearConfirm').hidden = true; hideMsg(); update(); });
+  $('cancelBtn').addEventListener('click', function () { $('cancelBtn').hidden = true; $('cancelConfirm').hidden = false; $('cancelMsg').hidden = true; $('cancelNo').focus(); });
+  $('cancelNo').addEventListener('click', function () { $('cancelConfirm').hidden = true; $('cancelBtn').hidden = false; });
+  $('cancelYes').addEventListener('click', doCancel);
+  $('newOrder').addEventListener('click', function () {
+    clearInterval(cancelTimer); last = null;
+    $('done').hidden = true; $('order').hidden = false; $('doneNum').style.textDecoration = '';
+    startedAt = Date.now(); hideMsg(); loadStatus(); update(); window.scrollTo(0, 0);
+  });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && $('done').hidden) loadStatus(); });
+  setInterval(function () { if (!document.hidden && $('done').hidden) loadStatus(); }, 120000);
+
+  // ---------- Cloudflare Turnstile (off until a site key is set) ----------
+  if (TURNSTILE_SITE_KEY) {
+    $('turnstile').hidden = false;
+    window.gbgTurnstileReady = function () {
+      window.turnstile.render('#turnstile', {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: function (tok) { turnstileToken = tok; },
+        'expired-callback': function () { turnstileToken = ''; }
+      });
+    };
+    var s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=gbgTurnstileReady&render=explicit';
+    s.async = true; document.head.appendChild(s);
+  }
+
+  update();
+  loadStatus();
+})();
+</script>
+</body>
+</html>
