@@ -203,7 +203,7 @@ h1{margin:0;font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(
 <form class="fields" id="orderForm" novalidate>
 <div class="field">
 <label for="phone">Phone number <span style="color:#B3261E">*</span></label>
-<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="416 555 0142">
+<input id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9 ]*" autocomplete="tel-national" maxlength="14" required placeholder="416 555 0142">
 <span class="err" id="phoneErr" hidden>Please enter a 10-digit phone number so we can reach you.</span>
 </div>
 <div class="field">
@@ -610,6 +610,17 @@ h1{margin:0;font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(
   // ---------- events ----------
   $('placeBtn').addEventListener('click', place);
   $('orderForm').addEventListener('submit', function (e) { e.preventDefault(); place(); });
+  // Phone: number pad on phones (inputmode=numeric); spaces are added automatically as they type.
+  function formatPhone(v) {
+    var d = String(v).replace(/\D/g, '');
+    if (d.length === 11 && d[0] === '1') d = d.slice(1);
+    d = d.slice(0, 10);
+    return d.length > 6 ? d.slice(0, 3) + ' ' + d.slice(3, 6) + ' ' + d.slice(6) : (d.length > 3 ? d.slice(0, 3) + ' ' + d.slice(3) : d);
+  }
+  $('phone').addEventListener('input', function () {
+    var f = formatPhone($('phone').value);
+    if (f !== $('phone').value) $('phone').value = f;
+  });
   ['phone', 'email', 'name'].forEach(function (id) { $(id).addEventListener('input', function () { hideMsg(); update(); }); });
   $('minBtn').addEventListener('click', function () { minimized = true; $('clearConfirm').hidden = true; update(); $('floatCart').focus(); });
   $('floatCart').addEventListener('click', function () { minimized = false; update(); $('your-order').scrollIntoView({ block: 'start' }); });
