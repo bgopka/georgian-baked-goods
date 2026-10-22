@@ -1,0 +1,28 @@
+{
+  "_readme": "THE business facts: hours, phone, address. Edit this file, then run `python3 tools/build.py`. It rewrites every hours/phone line on the site, the structured data, llms.txt and the PDF. n8n reads this file live from https://georgianbakedgoods.com/data/business.json, so online ordering opens and closes on these hours. Times are 24-hour HH:MM in Toronto time; null = closed all day. Use `specialHours` for a one-off day (holiday, closed early).",
+  "name": "Georgian Baked Goods",
+  "tagline": "Real Georgian bread, khachapuri & khinkali",
+  "phone": { "display": "647 479 8929", "e164": "+16474798929" },
+  "email": "sales@georgianbakedgoods.com",
+  "address": {
+    "street": "10 Plastics Ave., Unit 100",
+    "locality": "Etobicoke",
+    "city": "Toronto",
+    "region": "ON",
+    "postalCode": "M8Z 4B7",
+    "country": "CA"
+  },
+  "timezone": "America/Toronto",
+  "hstRate": 0.13,
+  "hours": {
+    "monday": null,
+    "tuesday":   { "open": "11:00", "close": "20:00" },
+    "wednesday": { "open": "11:00", "close": "20:00" },
+    "thursday":  { "open": "11:00", "close": "20:00" },
+    "friday":    { "open": "11:00", "close": "20:00" },
+    "saturday":  { "open": "11:00", "close": "20:00" },
+    "sunday":    { "open": "11:00", "close": "20:00" }
+  },
+  "_specialHoursFormat": "Each entry: { \"date\": \"2026-12-25\", \"closed\": true, \"note\": \"Christmas Day\" } or { \"date\": \"2026-12-24\", \"open\": \"11:00\", \"close\": \"16:00\", \"note\": \"Christmas Eve\" }. Online ordering follows these; past dates are ignored.",
+  "specialHours": []
+}

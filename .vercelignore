@@ -1,0 +1,6 @@
+# Build tooling and n8n code live in the repo but are not part of the website.
+# data/ IS published: n8n reads https://georgianbakedgoods.com/data/*.json.
+tools/
+n8n/
+README.md
+data/.pdf-inputs.sha256

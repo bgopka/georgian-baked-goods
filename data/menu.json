@@ -1,0 +1,55 @@
+{
+  "_readme": "THE menu. Edit this file, then run `python3 tools/build.py`. It rewrites the home page menu + structured data, order.html, llms.txt and the printable PDF. n8n reads this file live from https://georgianbakedgoods.com/data/menu.json to price orders. Never reuse an id: set \"available\": false to take an item off the menu (it stays here so its number is never given to a different item).",
+  "currency": "CAD",
+  "sections": [
+    {
+      "id": "khachapuri",
+      "title": "Khachapuri",
+      "subtitle": "Georgia’s famous cheese bread",
+      "items": [
+        { "id": 11, "name": "Imeruli Khachapuri", "size": "Large", "price": 19, "photo": "menu/03.jpg", "description": "Round and golden, sealed all the way around a salty imeruli and sulguni cheese filling." },
+        { "id": 12, "name": "Imeruli Khachapuri", "size": "Medium", "price": 10, "photo": "menu/03.jpg", "description": "Round and golden, sealed all the way around a salty imeruli and sulguni cheese filling." },
+        { "id": 13, "name": "Megruli Khachapuri", "size": "Large", "price": 22, "photo": "menu/01.jpg", "description": "Cheese-filled bread with an extra layer of cheese baked on top until golden." },
+        { "id": 14, "name": "Megruli Khachapuri", "size": "Medium", "price": 11, "photo": "menu/01.jpg", "description": "Cheese-filled bread with an extra layer of cheese baked on top until golden." },
+        { "id": 15, "name": "Adjaruli Khachapuri", "price": 12, "photo": "menu/04.jpg", "description": "The boat-shaped classic, with molten cheese, butter and an egg yolk to stir in." },
+        { "id": 16, "name": "Penovani Khachapuri", "price": 7, "photo": "menu/08.jpg", "description": "Flaky puff pastry folded around melted cheese." },
+        { "id": 17, "name": "Potato Pirozhki", "price": 3.70, "photo": "menu/16.jpg", "description": "Golden fried pies filled with soft, seasoned mashed potato.", "added": "2026-10-22" },
+        { "id": 18, "name": "Mtiuluri Khachapuri", "price": 10, "photo": "menu/12.jpg", "description": "A hearty cheese-filled pie in the style of Georgia’s Mtiuleti mountains." }
+      ]
+    },
+    {
+      "id": "breads",
+      "title": "Breads & filled pies",
+      "subtitle": "Breads and pastries with something good inside",
+      "items": [
+        { "id": 21, "name": "Penovani Lobiani", "price": 6, "photo": "menu/02.jpg", "description": "Flaky puff pastry filled with seasoned, herby red beans." },
+        { "id": 22, "name": "Lobiani", "size": "Large", "price": 16, "photo": "menu/07.jpg", "description": "Soft bread stuffed with seasoned, herby red beans." },
+        { "id": 23, "name": "Lobiani", "size": "Medium", "price": 10, "photo": "menu/07.jpg", "description": "Soft bread stuffed with seasoned, herby red beans." },
+        { "id": 24, "name": "Kubdari", "price": 12, "photo": "menu/10.jpg", "description": "A Svan specialty, bread filled with spiced chopped meat, onion and herbs." },
+        { "id": 25, "name": "Lily", "price": 3.50, "photo": "menu/15.jpg", "description": "Flaky puff pastry cup filled with chicken and melted cheese, topped with sesame." }
+      ]
+    },
+    {
+      "id": "khinkali",
+      "title": "Khinkali & savoury",
+      "subtitle": "Hand-pleated dumplings and hearty bites",
+      "items": [
+        { "id": 31, "name": "Khinkali", "price": 1.70, "photo": "menu/06.jpg", "description": "Hand-pleated dumplings with spiced meat and broth inside. Hold by the knot, sip, then bite." },
+        { "id": 32, "name": "Chebureki", "price": 5, "photo": "menu/05.jpg", "description": "Crisp, golden turnover filled with juicy seasoned meat." }
+      ]
+    },
+    {
+      "id": "sweets",
+      "title": "Sweets",
+      "subtitle": "Something for after",
+      "items": [
+        { "id": 42, "name": "Cake Spartak", "price": 5.50, "photo": "menu/13.jpg", "description": "Layers of chocolate honey sponge and smooth cream." },
+        { "id": 43, "name": "Cake Medovik", "price": 5.50, "photo": "menu/14.jpg", "description": "Classic honey cake with soft layers and sweet cream." }
+      ]
+    }
+  ],
+  "retired": [
+    { "id": 17, "name": "Gurulo", "price": 8, "photo": "menu/11.jpg", "retired": "2026-10-22", "note": "Removed; number 17 reused for Potato Pirozhki at the owner's request (orders before 2026-10-22 with #17 are Gurulo)." },
+    { "id": 41, "name": "Qada", "price": 2, "photo": "menu/09.jpg", "retired": "2026-10-22", "note": "Removed from the menu." }
+  ]
+}
