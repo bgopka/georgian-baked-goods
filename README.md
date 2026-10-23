@@ -7,8 +7,30 @@ Static site on Vercel (https://georgianbakedgoods.com); every push to `main` red
 
 | To change… | Edit | Then |
 |---|---|---|
-| Menu items, prices, photos, descriptions | `data/menu.json` | `python3 tools/build.py` and commit everything it changed |
+| Menu items, prices, photos, descriptions | `data/menu.json` | `python3 tools/build.py`, commit everything it changed, **then update Google** (below) |
 | Hours, holiday closures, phone, email, address | `data/business.json` | same |
+
+### Every change goes to three places
+
+The JSON files are the truth. A change isn't finished until all three match them:
+
+1. **Website** (`index.html`, `order.html`, guides, `llms.txt`): run `python3 tools/build.py`.
+2. **PDF menu** (`Georgian-Baked-Goods-Menu.pdf`): rebuilt by the same command. Commit it with git, not through the
+   n8n commit workflow (it's a binary file).
+3. **Google Business Profile** (Maps and Search): **not automatic**. Nothing in the build reaches Google, so do it by
+   hand after the commit deploys:
+   - Sign in as **sales@georgianbakedgoods.com**, search Google for "Georgian Baked Goods Etobicoke"; the
+     "Your business on Google" panel appears above the results.
+   - Menu change → **Edit menu → Full menu**. Match `data/menu.json` exactly: same sections, item names
+     (with "— Large"/"— Medium" for sizes), prices and descriptions. Remove retired items. New or changed photo →
+     attach that `menu/NN.jpg` to the item, and also add it under **Photos**.
+   - Hours change → **Edit profile → Hours**. Regular hours match `hours`; each `specialHours` entry goes under
+     **Special hours** with the same date.
+   - Phone, address, email or website change → **Edit profile → Contact / Location**.
+   - Google reviews edits before they go live (usually under 10 minutes). Check the pending banner in the
+     panel shows what you expect.
+
+Checklist for a commit message or a hand-off: `website ✔ PDF ✔ Google ✔`. If Google isn't done yet, say so.
 
 `tools/build.py` rewrites every copy on the site:
 
