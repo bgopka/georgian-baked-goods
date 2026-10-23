@@ -64,6 +64,10 @@ for d in DAYS:
     elif h is not None and not (re.fullmatch(r'\d{2}:\d{2}', h.get('open', '')) and re.fullmatch(r'\d{2}:\d{2}', h.get('close', ''))):
         errors.append(f'business.json: hours.{d} needs "open" and "close" as HH:MM')
 
+# "available": false hides an item everywhere (site, PDF, llms.txt; n8n refuses it too) while keeping its number reserved
+menu['sections'] = [dict(s, items=[it for it in s['items'] if it.get('available', True) is not False]) for s in menu['sections']]
+menu['sections'] = [s for s in menu['sections'] if s['items']]
+seen = {it['id']: it['name'] for s in menu['sections'] for it in s['items']}
 items = [dict(it, section=s) for s in menu['sections'] for it in s['items']]
 
 
