@@ -21,9 +21,14 @@ The JSON files are the truth. A change isn't finished until all three match them
    hand after the commit deploys:
    - Sign in as **sales@georgianbakedgoods.com**, search Google for "Georgian Baked Goods Etobicoke"; the
      "Your business on Google" panel appears above the results.
-   - Menu change → **Edit menu → Full menu**. Match `data/menu.json` exactly: same sections, item names
-     (with "— Large"/"— Medium" for sizes), prices and descriptions. Remove retired items. New or changed photo →
+   - Menu change → **Edit menu → Full menu**. Match `data/menu.json` exactly: same sections in the same order,
+     item names written as `#11 Imeruli Khachapuri — Large` (number, name, size), prices and descriptions.
+     Khinkali's description ends with "Price per piece." Remove retired items. New or changed photo →
      attach that `menu/NN.jpg` to the item, and also add it under **Photos**.
+   - Type the item name **last**, then click the section title before saving: Google's name autocomplete
+     otherwise swallows the next field. If Google says "Something went wrong", check the list before retrying;
+     the save often went through anyway and a retry makes a duplicate.
+   - The menu link (Contact → Menu or services link) is `https://georgianbakedgoods.com/#menu`.
    - Hours change → **Edit profile → Hours**. Regular hours match `hours`; each `specialHours` entry goes under
      **Special hours** with the same date.
    - Phone, address, email or website change → **Edit profile → Contact / Location**.
